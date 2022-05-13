@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time cleaner</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://kit.fontawesome.com/68fa96ce2a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   
+    
+</head>
+<body>
+    <!-- navigation start -->
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+       <i class="fas fa-bars"></i>     
+        </label>
+     <img src="img/logotime-removebg-preview.png" class="logo">
+        
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="contactus .html">Contact us</a></li>
+        </ul>
+    </nav>
+    <!-- navigation end -->
+
+    <div class="container1">
+        <form  class="form1" onsubmit="sendEmail(); reset(); return false;">
+            <h3>My Contact</h3>
+            <input type="text" id="name" placeholder="your Name" required>
+            <input type="email" id="email" placeholder="Email id" required>
+            <input type="text" id="phone" placeholder="phone no." required>
+            <textarea id="message" rows="4" placeholder="How can we help you!"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            
+       Email.send({
+           secureToken:" 0e4f75f8-96f1-49a8-9254-59f7b9109886 ",
+     To : 'sohail.qaazi@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New contact form Enquiry",
+    Body : "Name: " + document.getElementById("name").value
+    +"<br> Email: " + document.getElementById("email").value
+    +"<br> phone no: " + document.getElementById("phone").value
+    +"<br> message : " + document.getElementById("message").value
+}).then(
+  message => alert("message sent succesfully")
+);
+
+        }
+    </script>
+
+
+<!-- footer -->
+
+<div class="footer-clean ">
+    <footer>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-3 ">
+                    <h3 data-aos="fade-up" data-aos-duration="900">Address</h3>
+              
+                    <p data-aos="fade-up" data-aos-duration="1200"> <b>Korangi Crossing </b> 
+                    </p>
+                    <p data-aos="fade-up" data-aos-duration="1200"> <b>Contact : 03170236304 </b> 
+                    </p>
+                    
+                </div>
+                <div class=" col-md-3 ">
+                    <h3 data-aos="fade-up" data-aos-duration="900">Site Map</h3>
+                    <ul class="ml-3" data-aos="fade-up" data-aos-duration="1200">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="service.html">Service</a></li>
+                        <li><a href="contactus .html">Contact Us</a></li>
+                        
+
+                    </ul>
+                </div>
+                <div class=" col-md-3 ">
+                    <h3 data-aos="fade-up" data-aos-duration="900">Follow Us</h3>
+                    <div class="">
+                        <ul data-aos="fade-up" data-aos-duration="1200">
+                            <li style="font-size: 30px; margin-left: 40px; padding-top: 10px;"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li style="font-size: 30px; margin-left: 40px; padding-top: 10px;"><a href="#"><i
+                                        class="fab fa-whatsapp"></i></a></li>
+                            <li style="font-size: 30px; margin-left: 40px; padding-top: 10px;"><a href="#"><i
+                                        class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 item social">
+                    <div>
+                        <h3 data-aos="fade-up" data-aos-duration="900">Contact Us</h3>
+                    </div>
+                    <form id="f-form" data-aos="fade-up" data-aos-duration="1200">
+                        <fieldset class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                placeholder="Enter email">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
+                        </fieldset>
+                        <fieldset class="form-group text-xs-right">
+                            <button id="f-btn" type="button" class="btn btn-secondary btn-lg">Send</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+</div>
+
+
+    </body>
+</html>
